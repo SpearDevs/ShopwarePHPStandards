@@ -1,0 +1,38 @@
+name: SpearDevs Shopware coding standards
+
+on: [ pull_request ]
+
+jobs:
+  coding_standards:
+    runs-on: ubuntu-latest
+    steps:
+      -   uses: actions/checkout@v3
+
+      -   name: Cache Composer dependencies
+          uses: actions/cache@v3
+          with:
+            path: /tmp/composer-cache
+            key: ${{ runner.os }}-${{ hashFiles('**/composer.lock') }}
+
+      -   name: Composer validate
+          run: composer validate
+
+      -   name: Setup PHP
+          uses: shivammathur/setup-php@v2
+          with:
+            php-version: '8.2'
+            tools: composer:v2
+          env:
+            COMPOSER_AUTH_JSON: '{"github-oauth": {"github.com": "${{ secrets.SPEARDEVS_PIPELINES_KEY }}"} }'
+
+      -   name: Install dependencies
+          run: composer install --prefer-dist
+
+      -   name: Check coding standards
+          run: vendor/bin/ecs check --clear-cache
+
+      -   name: Check Psalm
+          run: vendor/bin/psalm -m --no-progress --no-cache
+
+      -   name: Run PHPUnit tests
+          run: vendor/bin/phpunit

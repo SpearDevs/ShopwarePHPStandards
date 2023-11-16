@@ -1,0 +1,10 @@
+{
+    "name": "speardevs/shopware-coding-standards",
+    "license": "MIT",
+    "type": "library",
+    "description": "PHP coding standards for Shopware projects",
+    "require": {
+        "vimeo/psalm": "^5.15",
+        "symplify/easy-coding-standard": "^12.0"
+    }
+}
