@@ -36,6 +36,5 @@ return static function (ECSConfig $ecsConfig): void {
 
     $ecsConfig->skip([
         NotOperatorWithSuccessorSpaceFixer::class,
-        //        __DIR__ . '/tests/Application', # Uncomment for Sylius plugins
     ]);
 };
