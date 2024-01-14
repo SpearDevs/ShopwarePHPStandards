@@ -1,8 +1,8 @@
-# SpearDevs PHP Standards
+# SpearDevs Shopware PHP Standards
 
 ## Features
 
-SpearDevs PHP Shopware Standards package contains:
+SpearDevs Shopware PHP Standards package contains:
 
 * Psalm
 * Easy Coding Standards
@@ -27,7 +27,7 @@ SpearDevs PHP Shopware Standards package contains:
     "repositories": [
         {
             "type": "vcs",
-            "url": "git@github.com:SpearDevs/shopware-coding-standards.git"
+            "url": "git@github.com:SpearDevs/ShopwarePHPStandards.git"
         }
     ]
 }
@@ -64,4 +64,3 @@ Remember to change the plugin name in `tests/TestBoostrap.php`.
 
 If project has no implemented tests, comment `Run PHPUnit tests` step in pipeline defined
 in `.github/workflows/speardevs-shopware-coding-standards.yaml` to pass correctly job.
-

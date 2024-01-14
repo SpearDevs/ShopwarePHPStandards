@@ -2,7 +2,7 @@
     "name": "speardevs/shopware-php-standards",
     "license": "MIT",
     "type": "library",
-    "version": "0.1",
+    "version": "0.2",
     "description": "PHP coding standards for Shopware projects",
     "require": {
         "vimeo/psalm": "^5.15",
